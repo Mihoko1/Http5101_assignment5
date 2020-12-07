@@ -1,0 +1,104 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#containerbox {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+nav {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.navlink {
+    float: left;
+}
+
+.dellink {
+    float: right;
+    background-color: red;
+    color: #fff;
+    padding: 5px 20px;
+    border: none;
+    text-decoration: none;
+}
+
+.cancellink {
+    float: right;
+}
+
+.dellink:hover {
+    background-color: crimson;
+    color: #fff;
+    text-decoration: none;
+}
+
+.delButton {
+    display: block;
+    margin: 0 auto;
+    background-color: red;
+    padding: 5px 20px;
+    color: #ffffff;
+    border: none;
+    margin: 40px auto;
+}
+
+    .delButton:hover {
+        background-color: crimson;
+        color: #ffffff;
+    }
+
+.align {
+    display: flex;
+    align-items: center;
+}
+
+    .align a {
+        background-color: cadetblue;
+        color: #fff;
+        padding: 5px 20px;
+        border: none;
+        text-decoration: none;
+    }
+
+    .align h2 {
+        margin-right: 30px;
+    }
+
+
+    .align a:hover {
+        background-color: darkcyan;
+    }
+
+.searchForm {
+    margin-top: 20px;
+}
+
+.list, .marginTop {
+    margin-top: 20px
+}
+
+.addForm > div {
+    margin-top: 10px;
+}
+
+.msg {
+    color: red;
+}

@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<script>
+
+    function formValidate() {
+        var teacherFname = document.getElementById('TeacherFname');
+        var teacherlname = document.getElementById('TeacherLname');
+        var employeeNumber = document.getElementById("EmployeeNumber");
+        var hireDate = document.getElementById("HireDate");
+        var salary = document.getElementById("Salary");
+
+        // Regular expression
+        var regex = /[a-zA-Z]/;
+        var regexNum = /^\d+\.\d{0,2}$/;
+
+        if (teacherlname.value == "" || !regex.test(teacherlname.value) || teacherlname.value == "" || !regex.test(teacherlname.value) ||
+            employeeNumber.value == "" || hireDate.value == null || Salary == null || Salary == "" || !regexNum.test(salary.value)) {
+
+            document.getElementById("fNameError").innerHTML = "";
+            document.getElementById("lNameError").innerHTML = "";
+            document.getElementById("employeeNumError").innerHTML = "";
+            document.getElementById("hireDateError").innerHTML = "";
+            document.getElementById("salaryError").innerHTML = "";
+
+
+            if (teacherFname.value == "" || !regex.test(teacherFname.value)) {
+                document.getElementById("fNameError").innerHTML = "Please input valid first name";
+
+
+            }
+            if (teacherlname.value == "" || !regex.test(teacherlname.value)) {
+                document.getElementById("lNameError").innerHTML = "Please input valid last name";
+
+            }
+            if (employeeNumber.value == "") {
+                document.getElementById("employeeNumError").innerHTML = "Please input valid employee number";
+
+            }
+
+            if (hireDate.value == null) {
+                document.getElementById("hireDateError").innerHTML = "Please input valid hire date";
+                console.log("hire");
+            }
+
+            if (Salary == null || Salary == "" || !regexNum.test(salary.value)) {
+                document.getElementById("salaryError").innerHTML = "Please input valid number";
+                console.log("salary");
+            }
+
+            console.log("LLLL");
+            return false;
+
+
+        } else {
+            console.log("here");
+            return true;
+        }
+    }
+
+</script>
+
+
+<div id="containerbox">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Go back to list</a>
+
+    </nav>
+
+    <h2>New</h2>
+    <form class="addForm" name="teacherForm" method="POST" action="/Teacher/Create" onsubmit="return formValidate();">
+        <div>
+            <div>
+                <label for="TeacherFname">First Name: </label>
+                <span class="msg" id="fNameError"></span>
+            </div>
+            <div>
+                <input type="text" id="TeacherFname" name="TeacherFname" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="TeacherLname">Last Name: </label>
+                <spam class="msg" id="lNameError"></spam>
+            </div>
+            <div>
+                <input type="text" id="TeacherLname" name="TeacherLname" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="EmployeeNumber">Employee Number: </label>
+                <span class="msg" id="employeeNumError"></span>
+            </div>
+            <div>
+                <input type="text" id="EmployeeNumber" name="EmployeeNumber" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="HireDate">Hire Date: </label>
+                <span class="msg" id="hireDateError"></span>
+            </div>
+            <div>
+                <input type="date" id="HireDate" value="2020-01-01" name="HireDate" min="2000-01-01" />
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="Salary">Salary: </label>
+                <span class="msg" id="salaryError"></span>
+            </div>
+            <div>
+                <input type="number" id="Salary" name="Salary" min="0" value="0" step="0.01" "  />
+            </div>
+        </div>
+        <div class="marginTop">
+            <input type="submit" class="submit" value="Create" />
+        </div>
+    </form>
+
+</div>
