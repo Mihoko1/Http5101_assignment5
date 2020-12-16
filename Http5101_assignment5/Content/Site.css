@@ -29,6 +29,7 @@ nav {
 
 .navlink {
     float: left;
+    margin-left:15px;
 }
 
 .dellink {
@@ -101,4 +102,7 @@ nav {
 
 .msg {
     color: red;
+}
+.marginRight15{
+    margin-right:15px;
 }

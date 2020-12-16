@@ -204,6 +204,35 @@ namespace Http5101_assignment5.Controllers
             Conn.Close();
         }
 
+        public void UpdateTeacher(int id, [FromBody]Teacher AuthorInfo)
+        {
+            // Create an instance of a connection
+            MySqlConnection Conn = School.AccessDatabase();
+
+            // Open the connection between the web server and database
+            Conn.Open();
+
+            // Establish a new command for database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            // Query
+            cmd.CommandText = "update teachers set " +
+                "teacherFname=@teacherFname, teacherLname=@teacherLname, employeeNumber=@employeeNumber, " +
+                "hireDate=@hireDate, salary=@salary where teacherid=@teacherId";
+
+            cmd.Parameters.AddWithValue("@teacherFname", AuthorInfo.TeacherFname);
+            cmd.Parameters.AddWithValue("@teacherLname", AuthorInfo.TeacherLname);
+            cmd.Parameters.AddWithValue("@employeeNumber", AuthorInfo.EmployeeNumber);
+            cmd.Parameters.AddWithValue("@hireDate", AuthorInfo.HireDate);
+            cmd.Parameters.AddWithValue("@salary", AuthorInfo.Salary);
+            cmd.Parameters.AddWithValue("@teacherId", id);
+            cmd.Prepare();
+
+            cmd.ExecuteNonQuery();
+            Conn.Close();
+
+        }
+
     }
 }
 

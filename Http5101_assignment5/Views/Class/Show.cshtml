@@ -3,16 +3,22 @@
     ViewBag.Title = "Show";
 }
 
-<a class="navlink" href="/Class/List">Go Back To Classes</a>
+
+<div id="containerbox">
+
+    <nav>
+        <a class="navlink" href="/Class/List">Go Back To Classes</a>
+       
+    </nav>
+</div>
+
+
 <div>
 
     <h2>@Model.ClassCode - @Model.ClassName</h2>
     <table class="table table-sm">
         <tbody>
-            <tr>
-                <th scope="row">Instructor</th>
-                <td>@Model.TeacherFname @Model.TeacherLname</td>
-            </tr>
+
             <tr>
                 <th scope="row">Start Date</th>
                 <td>@Model.StartDate</td>

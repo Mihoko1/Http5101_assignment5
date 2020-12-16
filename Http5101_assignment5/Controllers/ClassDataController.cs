@@ -91,7 +91,7 @@ namespace Http5101_assignment5.Controllers
 
             // Query
             cmd.CommandText = "select * from classes " +
-                "left outer join teachers on classes.teacherid = teachers.teacherid " +
+               // "left outer join teachers on classes.teacherid = teachers.teacherid " +
                 "where classes.classid = " + id;
 
             // Gather Result Set of Query into a variable
@@ -107,8 +107,8 @@ namespace Http5101_assignment5.Controllers
                 string ClassName = (string)ResultSet["classname"];
                 DateTime StartDate = (DateTime)ResultSet["startdate"];
                 DateTime FinishDate = (DateTime)ResultSet["finishdate"];
-                string TeacherFname = (string)ResultSet["teacherfname"];
-                string TeacherLname = (string)ResultSet["teacherLname"];
+                //string TeacherFname = (string)ResultSet["teacherfname"];
+                //string TeacherLname = (string)ResultSet["teacherLname"];
 
 
                 NewClass.ClassId = ClassId;
@@ -117,8 +117,8 @@ namespace Http5101_assignment5.Controllers
                 NewClass.ClassName = ClassName;
                 NewClass.StartDate = StartDate;
                 NewClass.FinishDate = FinishDate;
-                NewClass.TeacherFname = TeacherFname;
-                NewClass.TeacherLname = TeacherLname;
+               // NewClass.TeacherFname = TeacherFname;
+                //NewClass.TeacherLname = TeacherLname;
 
             }
 

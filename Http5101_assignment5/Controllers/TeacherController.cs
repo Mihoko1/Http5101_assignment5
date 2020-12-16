@@ -92,6 +92,58 @@ namespace Http5101_assignment5.Controllers
 
 
         }
+        //Get: /Teacher/Update/{id}
+        /// <summary>
+        /// Receive a POST reqiest containing information about an existing teacher in the system, with new values.
+        /// Conveys this information to the API, and redirects to the Teacher's "Show" page
+        /// </summary>
+        /// <param name="id">Id of the Teacher to update</param>
+        /// <param name="TeacherFname">The update first name of the teacher</param>
+        /// <param name="TeacherLname">The update last name of the teacher</param>
+        /// <param name="EmployeeNumber">The update employee number of the teacher</param>
+        /// <param name="HireDate">The update first hire date of the teacher</param>
+        /// <param name="Salary">The update salaryof the teacher</param>
+        /// <returns></returns>
+
+        public ActionResult Update(int id)
+        {
+
+            TeacherDataController controller = new TeacherDataController();
+            Teacher SelectTeacher = controller.FindTeacher(id);
+
+            return View(SelectTeacher);
+        }
+
+        //POST: Teacher/Update/{id}
+        /// <summary>
+        /// Receive a POST reqiest containing information about an existing teacher in the system, with new values.
+        /// Conveys this information to the API, and redirects to the Teacher's "Show" page
+        /// </summary>
+        /// <param name="id">Id of the Teacher to update</param>
+        /// <param name="TeacherFname">The update first name of the teacher</param>
+        /// <param name="TeacherLname">The update last name of the teacher</param>
+        /// <param name="EmployeeNumber">The update employee number of the teacher</param>
+        /// <param name="HireDate">The update first hire date of the teacher</param>
+        /// <param name="Salary">The update salaryof the teacher</param>
+        /// <returns>A dynamic webpage which provides the current infromation of the author.</returns>
+        /// 
+        [HttpPost]
+        public ActionResult Update(int id, string TeacherFname, string TeacherLname, string EmployeeNumber,
+            DateTime HireDate, decimal Salary)
+        {
+            Teacher TeacherInfo = new Teacher();
+            TeacherInfo.TeacherFname = TeacherFname;
+            TeacherInfo.TeacherLname = TeacherLname;
+            TeacherInfo.EmployeeNumber = EmployeeNumber;
+            TeacherInfo.HireDate = HireDate;
+            TeacherInfo.Salary = Salary;
+
+            TeacherDataController controller = new TeacherDataController();
+            controller.UpdateTeacher(id, TeacherInfo);
+
+
+            return RedirectToAction("Show/" + id);
+        }
 
 
     }

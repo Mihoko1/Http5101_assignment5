@@ -4,39 +4,26 @@
 @{
     ViewBag.Title = "List";
 }
+<div id="containerbox">
 
-<h2>Student List</h2>
+    <div class="align">
+        <h2>Student List</h2>
+    </div>
 
-<table class="table table-sm">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Student Number</th>
-            <th scope="col">Name</th>
-        </tr>
-    </thead>
-    <tbody>
-
-
+    <div class="list">
 
         @foreach (var student in Model)
         {
-            <tr>
-                <th scope="row">
-                    @student.StudentId
-                </th>
-                <td>
-                    <a href="/Student/Show/@student.StudentId">@student.StudentNumber </a>
-                </td>
-                <td>
-                    <a href="/Student/Show/@student.StudentId">@student.StudentFname @student.StudentLname</a>
-                </td>
-            </tr>
+            <div>
+
+                <a href="/Student/Show/@student.StudentId"><span class="marginRight15">@student.StudentNumber</span> @student.StudentFname @student.StudentLname</a>
+
+            </div>
 
         }
 
+    </div>
 
-    </tbody>
-</table>
-/h2>
+</div>
+
 

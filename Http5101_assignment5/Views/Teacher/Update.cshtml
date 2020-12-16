@@ -1,6 +1,7 @@
-﻿
+﻿@model Http5101_assignment5.Models.Teacher
+
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Update";
 }
 
 <script>
@@ -65,19 +66,19 @@
 
 <div id="containerbox">
     <nav>
-        <a class="navlink" href="/Teacher/List">Go back to list</a>
+        <a class="navlink" href="/Teacher/Show/@Model.TeacherId">Back</a>
 
     </nav>
 
-    <h2>New</h2>
-    <form class="addForm" name="teacherForm" method="POST" action="/Teacher/Create" onsubmit="return formValidate();">
+    <h2>Update</h2>
+    <form class="addForm" name="teacherForm" method="POST" action="/Teacher/Update/@Model.TeacherId" onsubmit="return formValidate();">
         <div>
             <div>
                 <label for="TeacherFname">First Name: </label>
                 <span class="msg" id="fNameError"></span>
             </div>
             <div>
-                <input type="text" id="TeacherFname" name="TeacherFname" />
+                <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.TeacherFname" />
             </div>
         </div>
         <div>
@@ -86,7 +87,7 @@
                 <spam class="msg" id="lNameError"></spam>
             </div>
             <div>
-                <input type="text" id="TeacherLname" name="TeacherLname" />
+                <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.TeacherLname"/>
             </div>
         </div>
         <div>
@@ -95,7 +96,7 @@
                 <span class="msg" id="employeeNumError"></span>
             </div>
             <div>
-                <input type="text" id="EmployeeNumber" name="EmployeeNumber" />
+                <input type="text" id="EmployeeNumber" name="EmployeeNumber" value="@Model.EmployeeNumber"/>
             </div>
         </div>
         <div>
@@ -104,7 +105,7 @@
                 <span class="msg" id="hireDateError"></span>
             </div>
             <div>
-                <input type="date" id="HireDate" value="2020-01-01" name="HireDate" min="2000-01-01" />
+                <input type="date" id="HireDate" value= "@Model.HireDate.ToString("yyyy/MM/dd")" name="HireDate" min="2000-01-01"/>
             </div>
         </div>
         <div>
@@ -113,7 +114,7 @@
                 <span class="msg" id="salaryError"></span>
             </div>
             <div>
-                <input type="number" id="Salary" name="Salary" min="0" value="0" step="0.01" />
+                <input type="number" id="Salary" name="Salary" min="0" step="0.01"  value="@Model.Salary" />
             </div>
         </div>
         <div class="marginTop">

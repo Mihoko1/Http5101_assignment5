@@ -15,8 +15,8 @@ namespace Http5101_assignment5.Models
         public string ClassName;
         public DateTime StartDate;
         public DateTime FinishDate;
-        public string TeacherFname;
-        public string TeacherLname;
+       // public string TeacherFname;
+       // public string TeacherLname;
     
     }
 }
