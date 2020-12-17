@@ -16,20 +16,20 @@
 <div>
 
     <h2>@Model.StudentFname @Model.StudentLname</h2>
-    <table class="table table-sm">
-        <tbody>
-            <tr>
-                <th scope="row">Student Number</th>
-                <td>@Model.StudentNumber</td>
-            </tr>
-            <tr>
-                <th scope="row">Enrol Date</th>
-                <td>@Model.EnrolDate</td>
+    <div>
+       
+        <div class="fieldContainer">
+            <div class="bold">Student Number</div>
+            <div>@Model.StudentNumber</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">Enrol Date</div>
+            <div>@Model.EnrolDate</div>
 
-            </tr>
+        </div>
 
-        </tbody>
-    </table>
+       
+    </div>
 
 
 

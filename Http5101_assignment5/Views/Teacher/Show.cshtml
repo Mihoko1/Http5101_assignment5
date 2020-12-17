@@ -17,27 +17,27 @@
 </div>
 
 <h2>@Model.TeacherFname @Model.TeacherLname</h2>
-<table class="table table-sm">
-    <tbody>
-        <tr>
-            <th scope="row">Employee Number</th>
-            <td>@Model.EmployeeNumber</td>
-        </tr>
-        <tr>
-            <th scope="row">Hire Date</th>
-            <td>@Model.HireDate</td>
-        </tr>
-        <tr>
-            <th scope="row">Class Code</th>
-            <td>@Model.ClassCode</td>
-        </tr>
-        <tr>
-            <th scope="row">Class Name</th>
-            <td>@Model.ClassName</td>
-        </tr>
-        <tr>
-            <th scope="row">Salary</th>
-            <td>$ @Model.Salary</td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+   
+        <div class="fieldContainer">
+            <div class="bold">Employee Number</div>
+            <div>@Model.EmployeeNumber</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">Hire Date</div>
+            <div>@Model.HireDate</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">Class Code</div>
+            <div>@Model.ClassCode</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">Class Name</div>
+            <div>@Model.ClassName</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">Salary</div>
+            <div>$ @Model.Salary</div>
+        </div>
+   
+</div>

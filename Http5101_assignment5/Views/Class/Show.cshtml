@@ -14,25 +14,15 @@
 
 
 <div>
-
     <h2>@Model.ClassCode - @Model.ClassName</h2>
-    <table class="table table-sm">
-        <tbody>
-
-            <tr>
-                <th scope="row">Start Date</th>
-                <td>@Model.StartDate</td>
-
-            </tr>
-            <tr>
-                <th scope="row">End Date</th>
-                <td>@Model.FinishDate</td>
-
-            </tr>
-
-        </tbody>
-    </table>
-
-
-
+    <div>
+        <div class="fieldContainer">
+            <div class="bold">Start Date</div>
+            <div>@Model.StartDate</div>
+        </div>
+        <div class="fieldContainer">
+            <div class="bold">End Date</div>
+            <div>@Model.FinishDate</div>
+        </div>
+    </div>
 </div>
